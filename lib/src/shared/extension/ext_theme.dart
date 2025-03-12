@@ -27,7 +27,7 @@ extension ThemeX on BuildContext {
   ThemeData get themeData {
     return ThemeData(useMaterial3: true).copyWith(
       primaryColor: ColorName.primary,
-      scaffoldBackgroundColor: Colors.white,
+      scaffoldBackgroundColor: ColorName.background,
       appBarTheme: AppBarTheme(
         shape: const Border(bottom: BorderSide(color: ColorName.grayLight)),
         backgroundColor: ColorName.primary,
@@ -35,6 +35,7 @@ extension ThemeX on BuildContext {
         scrolledUnderElevation: 0.0,
         elevation: 0.0,
         titleTextStyle: textTheme.bodyLarge?.copyWith(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
       ),
       inputDecorationTheme: InputDecorationTheme(
         contentPadding: EdgeInsets.symmetric(

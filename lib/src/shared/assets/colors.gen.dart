@@ -13,6 +13,9 @@ import 'package:flutter/material.dart';
 class ColorName {
   ColorName._();
 
+  /// Color: #F8FBFE
+  static const Color background = Color(0xFFF8FBFE);
+
   /// Color: #EAEDEF
   static const Color grayLight = Color(0xFFEAEDEF);
 

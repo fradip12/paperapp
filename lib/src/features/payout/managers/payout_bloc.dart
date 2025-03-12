@@ -6,15 +6,15 @@ import '../../../data/models/account.dart';
 import '../../../domain/repository/payout_repository.dart';
 import '../../../shared/network/api_status.dart';
 
-part 'accounts_state.dart';
-part 'accounts_event.dart';
-part 'accounts_bloc.freezed.dart';
+part 'payout_state.dart';
+part 'payout_event.dart';
+part 'payout_bloc.freezed.dart';
 
 @injectable
-class AccountsBloc extends Bloc<AccountsEvent, AccountsState> {
+class PayoutBloc extends Bloc<PayoutEvent, PayoutState> {
   final PayoutRepository repository;
 
-  AccountsBloc(this.repository)
+  PayoutBloc(this.repository)
       : super(const _Initial(state: ApiStatus.initial)) {
     on<_Load>((event, emit) async {
       emit(state.copyWith(state: ApiStatus.loading));
@@ -42,6 +42,10 @@ class AccountsBloc extends Bloc<AccountsEvent, AccountsState> {
           accounts: filteredAccounts,
         ));
       }
+    });
+
+    on<_SelectAccount>((event, emit) {
+      emit(state.copyWith(selectedAccount: event.account));
     });
   }
 }

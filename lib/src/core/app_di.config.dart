@@ -16,7 +16,7 @@ import 'package:injectable/injectable.dart' as _i526;
 import '../data/datasource/remote_ds.dart' as _i404;
 import '../data/repository/payout_repository_impl.dart' as _i984;
 import '../domain/repository/payout_repository.dart' as _i589;
-import '../features/payout/managers/accounts_bloc.dart' as _i171;
+import '../features/payout/managers/payout_bloc.dart' as _i459;
 import 'app_module.dart' as _i460;
 
 extension GetItInjectableX on _i174.GetIt {
@@ -47,8 +47,8 @@ extension GetItInjectableX on _i174.GetIt {
             ));
     gh.lazySingleton<_i589.PayoutRepository>(
         () => _i984.PayoutRepositoryImpl(gh<_i404.PayoutRemoteDatasources>()));
-    gh.factory<_i171.AccountsBloc>(
-        () => _i171.AccountsBloc(gh<_i589.PayoutRepository>()));
+    gh.factory<_i459.PayoutBloc>(
+        () => _i459.PayoutBloc(gh<_i589.PayoutRepository>()));
     return this;
   }
 }

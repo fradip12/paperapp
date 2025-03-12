@@ -6,5 +6,7 @@
     <color name="grayLight">#EAEDEF</color>
     <color name="textSub">#7F97A7</color>
     <color name="textPrimary">#133F5D</color>
+    <color name="background">#F8FBFE</color>
+
     
 </resources>
