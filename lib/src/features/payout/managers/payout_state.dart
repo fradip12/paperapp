@@ -6,6 +6,8 @@ class PayoutState with _$PayoutState {
     @Default(ApiStatus.initial) ApiStatus state,
     List<Accounts>? accounts,
     Accounts? selectedAccount,
+    @Default(NotificationType.whatsapp) NotificationType notificationType,
     String? errMessage,
+    String? amount,
   }) = _Initial;
 }

@@ -13,7 +13,7 @@ class CurrencyInputFormatter extends TextInputFormatter {
     TextEditingValue oldValue,
     TextEditingValue newValue,
   ) {
-    if (newValue.text.isEmpty) {
+    if (newValue.text.isEmpty || newValue.text == 'Rp ') {
       return newValue.copyWith(text: '');
     }
 

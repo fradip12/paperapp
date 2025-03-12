@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/enums/notification_type.dart';
 import '../../../data/models/account.dart';
@@ -7,6 +8,7 @@ import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_textfield.dart';
 import '../../../shared/extension/ext_dimens.dart';
 import '../../../shared/utils/u_formatter.dart';
+import '../managers/payout_bloc.dart';
 import 'card_payout_account.dart';
 
 class PaymentRecipientCardView extends StatefulWidget {
@@ -20,7 +22,7 @@ class PaymentRecipientCardView extends StatefulWidget {
 
 class _PaymentRecipientCardViewState extends State<PaymentRecipientCardView> {
   bool isExpanded = true;
-  NotificationType selectedNotification = NotificationType.whatsapp;
+  String amount = '';
 
   @override
   Widget build(BuildContext context) {
@@ -31,108 +33,118 @@ class _PaymentRecipientCardViewState extends State<PaymentRecipientCardView> {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: ColorName.grayLight),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        spacing: context.spacingSm,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: BlocBuilder<PayoutBloc, PayoutState>(
+        builder: (context, state) {
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            spacing: context.spacingSm,
             children: [
-              const GlobalText.title(
-                value: 'Informasi Penerima',
-                color: ColorName.textSub,
-              ),
-              IconButton(
-                icon: Icon(
-                  isExpanded
-                      ? Icons.keyboard_arrow_up
-                      : Icons.keyboard_arrow_down,
-                  color: Colors.grey,
-                ),
-                onPressed: () {
-                  setState(() {
-                    isExpanded = !isExpanded;
-                  });
-                },
-              ),
-            ],
-          ),
-          if (isExpanded) ...[
-            PayoutAccountCard(
-              account: widget.account,
-              useBorder: false,
-            ),
-            const GlobalText.label(
-              value: 'Pilih Metode Notifikasi',
-              color: ColorName.textSub,
-            ),
-            Row(
-              children: [
-                Radio<NotificationType>(
-                  value: NotificationType.whatsapp,
-                  groupValue: selectedNotification,
-                  onChanged: (NotificationType? value) {
-                    setState(() {
-                      selectedNotification = value!;
-                    });
-                  },
-                  activeColor: Colors.blue,
-                ),
-                const GlobalText.label(value: 'WhatsApp'),
-                const SizedBox(width: 24),
-                Radio<NotificationType>(
-                  value: NotificationType.sms,
-                  groupValue: selectedNotification,
-                  onChanged: (NotificationType? value) {
-                    setState(() {
-                      selectedNotification = value!;
-                    });
-                  },
-                  activeColor: Colors.blue,
-                ),
-                const GlobalText.label(value: 'SMS'),
-              ],
-            ),
-            const GlobalText.label(
-              value:
-                  'Mitra akan menerima notifikasi pembayaran melalui WhatsApp.',
-              color: ColorName.textSub,
-            ),
-            RichText(
-              text: TextSpan(
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextSpan(
-                    text: 'Jumlah Pembayaran',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.blueGrey.shade800,
-                      fontWeight: FontWeight.w600,
-                    ),
+                  const GlobalText.title(
+                    value: 'Informasi Penerima',
+                    color: ColorName.textSub,
                   ),
-                  TextSpan(
-                    text: ' *',
-                    style: TextStyle(
-                      fontSize: 14,
-                      color: Colors.red.shade400,
-                      fontWeight: FontWeight.bold,
+                  IconButton(
+                    icon: Icon(
+                      isExpanded
+                          ? Icons.keyboard_arrow_up
+                          : Icons.keyboard_arrow_down,
+                      color: Colors.grey,
                     ),
+                    onPressed: () {
+                      setState(() {
+                        isExpanded = !isExpanded;
+                      });
+                    },
                   ),
                 ],
               ),
-            ),
-            GlobalTextField(
-              hintText: 'Rp. 1.000.000',
-              keyboardType: TextInputType.number,
-              inputFormatters: [
-                CurrencyInputFormatter(),
+              if (isExpanded) ...[
+                PayoutAccountCard(
+                  account: widget.account,
+                  useBorder: false,
+                ),
+                const GlobalText.label(
+                  value: 'Pilih Metode Notifikasi',
+                  color: ColorName.textSub,
+                ),
+                Row(
+                  children: [
+                    Radio<NotificationType>(
+                      value: NotificationType.whatsapp,
+                      groupValue: state.notificationType,
+                      onChanged: (NotificationType? value) {
+                        context
+                            .read<PayoutBloc>()
+                            .add(PayoutEvent.setNotificationType(value!));
+                      },
+                      activeColor: Colors.blue,
+                    ),
+                    const GlobalText.label(value: 'WhatsApp'),
+                    const SizedBox(width: 24),
+                    Radio<NotificationType>(
+                      value: NotificationType.sms,
+                      groupValue: state.notificationType,
+                      onChanged: (NotificationType? value) {
+                        context
+                            .read<PayoutBloc>()
+                            .add(PayoutEvent.setNotificationType(value!));
+                      },
+                      activeColor: Colors.blue,
+                    ),
+                    const GlobalText.label(value: 'SMS'),
+                  ],
+                ),
+                const GlobalText.label(
+                  value:
+                      'Mitra akan menerima notifikasi pembayaran melalui WhatsApp.',
+                  color: ColorName.textSub,
+                ),
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: 'Jumlah Pembayaran',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.blueGrey.shade800,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      TextSpan(
+                        text: ' *',
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.red.shade400,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                GlobalTextField(
+                  hintText: 'Rp. 1.000.000',
+                  keyboardType: TextInputType.number,
+                  value: state.amount,
+                  onChanged: (value) {
+                    context
+                        .read<PayoutBloc>()
+                        .add(PayoutEvent.setAmount(value ?? ''));
+                  },
+                  inputFormatters: [
+                    CurrencyInputFormatter(),
+                  ],
+                ),
+                const GlobalText.label(value: 'Berita Acara'),
+                const GlobalTextField(
+                  hintText: 'Berita Acara',
+                ),
               ],
-            ),
-            const GlobalText.label(value: 'Berita Acara'),
-            const GlobalTextField(
-              hintText: 'Berita Acara',
-            ),
-          ],
-        ],
+            ],
+          );
+        },
       ),
     );
   }

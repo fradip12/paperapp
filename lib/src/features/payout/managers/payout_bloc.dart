@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../data/enums/notification_type.dart';
 import '../../../data/models/account.dart';
 import '../../../domain/repository/payout_repository.dart';
 import '../../../shared/network/api_status.dart';
@@ -46,6 +47,14 @@ class PayoutBloc extends Bloc<PayoutEvent, PayoutState> {
 
     on<_SelectAccount>((event, emit) {
       emit(state.copyWith(selectedAccount: event.account));
+    });
+
+    on<_SetAmount>((event, emit) {
+      emit(state.copyWith(amount: event.amount));
+    });
+
+    on<_SetNotificationType>((event, emit) {
+      emit(state.copyWith(notificationType: event.notificationType));
     });
   }
 }

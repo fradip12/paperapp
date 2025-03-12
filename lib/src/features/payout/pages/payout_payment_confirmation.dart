@@ -16,74 +16,78 @@ class PayoutPaymentConfirmationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const GlobalText.title(
-          value: 'Pembayaran Invoice',
-          color: Colors.white,
-        ),
-        centerTitle: true,
-        automaticallyImplyLeading: true,
-      ),
-      bottomNavigationBar: Container(
-        color: ColorName.primary,
-        padding: EdgeInsets.symmetric(
-          horizontal: context.spacingMd,
-          vertical: context.spacingXlg,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Flexible(
-              flex: 4,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  GlobalText.label(
-                    value: 'Total',
-                    color: Colors.white,
-                  ),
-                  GlobalText.title(
-                    value: 'Rp. 1.000.000',
-                    color: Colors.white,
-                  ),
-                ],
-              ),
+    return BlocBuilder<PayoutBloc, PayoutState>(
+      builder: (context, state) {
+        return Scaffold(
+          appBar: AppBar(
+            title: const GlobalText.title(
+              value: 'Pembayaran Invoice',
+              color: Colors.white,
             ),
-            Flexible(
-              flex: 4,
-              child: GlobalButton.filled(
-                onTap: () {},
-                fullWidth: false,
-                backgroundColor: ColorName.green,
-                child: const GlobalText.label(
-                  value: 'Selanjutnya',
-                  color: Colors.white,
+            centerTitle: true,
+            automaticallyImplyLeading: true,
+          ),
+          bottomNavigationBar: Container(
+            color: ColorName.primary,
+            padding: EdgeInsets.symmetric(
+              horizontal: context.spacingMd,
+              vertical: context.spacingXlg,
+            ),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  flex: 4,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const GlobalText.label(
+                        value: 'Total',
+                        color: Colors.white,
+                      ),
+                      GlobalText.title(
+                        value: state.amount ?? '',
+                        color: Colors.white,
+                      ),
+                    ],
+                  ),
                 ),
-              ),
-            ),
-          ],
-        ),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(context.spacingMd),
-        child: BlocBuilder<PayoutBloc, PayoutState>(
-          builder: (context, state) {
-            return SingleChildScrollView(
-              child: Column(
-                spacing: context.spacingMd,
-                children: [
-                  PaymentRecipientCardView(
-                    account: state.selectedAccount!,
+                Flexible(
+                  flex: 4,
+                  child: GlobalButton.filled(
+                    onTap: () {},
+                    fullWidth: false,
+                    backgroundColor: ColorName.green,
+                    child: const GlobalText.label(
+                      value: 'Selanjutnya',
+                      color: Colors.white,
+                    ),
                   ),
-                  const PaymentRecipientBankCardView()
-                ],
-              ),
-            );
-          },
-        ),
-      ),
+                ),
+              ],
+            ),
+          ),
+          body: Padding(
+            padding: EdgeInsets.all(context.spacingMd),
+            child: BlocBuilder<PayoutBloc, PayoutState>(
+              builder: (context, state) {
+                return SingleChildScrollView(
+                  child: Column(
+                    spacing: context.spacingMd,
+                    children: [
+                      PaymentRecipientCardView(
+                        account: state.selectedAccount!,
+                      ),
+                      const PaymentRecipientBankCardView()
+                    ],
+                  ),
+                );
+              },
+            ),
+          ),
+        );
+      },
     );
   }
 }
