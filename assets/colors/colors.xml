@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Colors Tokens -->
+    <color name="primary">#4199D5</color>
+    <color name="green">#97CC56</color>
+    <color name="grayLight">#EAEDEF</color>
+    <color name="textSub">#7F97A7</color>
+    <color name="textPrimary">#133F5D</color>
+    
+</resources>
