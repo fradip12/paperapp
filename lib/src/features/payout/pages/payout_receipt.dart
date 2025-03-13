@@ -1,7 +1,12 @@
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../../core/app_router.gr.dart';
 import '../../../shared/assets/assets.gen.dart';
@@ -13,8 +18,172 @@ import '../../../shared/extension/ext_misc.dart';
 import '../managers/payout_bloc.dart';
 
 @RoutePage()
-class PayoutReceiptPage extends StatelessWidget {
+class PayoutReceiptPage extends StatefulWidget {
   const PayoutReceiptPage({super.key});
+
+  @override
+  State<PayoutReceiptPage> createState() => _PayoutReceiptPageState();
+}
+
+class _PayoutReceiptPageState extends State<PayoutReceiptPage> {
+  GlobalKey globalKey = GlobalKey();
+
+  Widget receiptContent(BuildContext context, PayoutState state) {
+    return RepaintBoundary(
+      key: globalKey,
+      child: Column(
+        spacing: context.spacingMd,
+        children: [
+          Container(
+            padding: EdgeInsets.all(context.spacingMd),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(context.spacingMd),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(25),
+                  blurRadius: 5,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              spacing: context.spacingSm,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Align(
+                  alignment: Alignment.center,
+                  child: GlobalText.title(value: 'Pembayaran Berhasil'),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      padding: EdgeInsets.all(context.spacingXxs),
+                      decoration: BoxDecoration(
+                        color: ColorName.green,
+                        borderRadius: BorderRadius.circular(context.spacingMd),
+                      ),
+                      child: const GlobalText.caption(
+                        value: 'Dana Diteruskan',
+                        color: Colors.white,
+                      ),
+                    ),
+                    const GlobalText.label(
+                      value: 'Lihat Detail Status',
+                      fontWeight: FontWeight.bold,
+                    )
+                  ],
+                ),
+                const Divider(),
+                const GlobalText.label(
+                  value: 'Pembayaran Via',
+                  fontWeight: FontWeight.bold,
+                ),
+                Row(
+                  spacing: context.spacingSm,
+                  children: [
+                    state.selectedMethod!.icon.svg(width: 50),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GlobalText.title(
+                          value: (state.selectedMethod?.label).orDefault,
+                        ),
+                        GlobalText.caption(
+                          value:
+                              'PT. ${(state.selectedMethod?.label).orDefault}',
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            padding: EdgeInsets.all(context.spacingMd),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(context.spacingMd),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withAlpha(25),
+                  blurRadius: 5,
+                  offset: const Offset(0, 5),
+                ),
+              ],
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: context.spacingSm,
+              children: [
+                const GlobalText.title(value: 'Rincian Pembayaran'),
+                const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                        child: GlobalText.caption(value: 'Total Supplier')),
+                    GlobalText.label(value: '3'),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Expanded(
+                      child: GlobalText.caption(value: 'Metode Pembayaran'),
+                    ),
+                    GlobalText.label(value: state.selectedMethod!.label),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Expanded(
+                        child: GlobalText.caption(value: 'Tanggal Pembayaran')),
+                    GlobalText.label(
+                      value: DateFormat.yMEd().format(DateTime.now()),
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Expanded(
+                      child: GlobalText.label(value: 'Total Pembayaran'),
+                    ),
+                    GlobalText.title(
+                      value: state.amount.orDefault,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Future<Uint8List> _capturePng() async {
+    try {
+      RenderRepaintBoundary boundary =
+          globalKey.currentContext?.findRenderObject() as RenderRepaintBoundary;
+
+      ui.Image image = await boundary.toImage(pixelRatio: 3.0);
+      ByteData? byteData =
+          await image.toByteData(format: ui.ImageByteFormat.png);
+      if (byteData == null) {
+        throw Exception('ByteData is null');
+      }
+      var pngBytes = byteData.buffer.asUint8List();
+      Share.shareXFiles([XFile.fromData(pngBytes, mimeType: 'image/png')]);
+      return pngBytes;
+    } catch (e) {
+      return Uint8List(0);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -47,137 +216,7 @@ class PayoutReceiptPage extends StatelessWidget {
             child: Column(
               spacing: context.spacingMd,
               children: [
-                Container(
-                  padding: EdgeInsets.all(context.spacingMd),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(context.spacingMd),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withAlpha(25),
-                        blurRadius: 5,
-                        offset: const Offset(0, 5),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    spacing: context.spacingSm,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Align(
-                        alignment: Alignment.center,
-                        child: GlobalText.title(value: 'Pembayaran Berhasil'),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            padding: EdgeInsets.all(context.spacingXxs),
-                            decoration: BoxDecoration(
-                              color: ColorName.green,
-                              borderRadius:
-                                  BorderRadius.circular(context.spacingMd),
-                            ),
-                            child: const GlobalText.caption(
-                              value: 'Dana Diteruskan',
-                              color: Colors.white,
-                            ),
-                          ),
-                          const GlobalText.label(
-                            value: 'Lihat Detail Status',
-                            fontWeight: FontWeight.bold,
-                          )
-                        ],
-                      ),
-                      const Divider(),
-                      const GlobalText.label(
-                        value: 'Pembayaran Via',
-                        fontWeight: FontWeight.bold,
-                      ),
-                      Row(
-                        spacing: context.spacingSm,
-                        children: [
-                          state.selectedMethod!.icon.svg(width: 50),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              GlobalText.title(
-                                value: (state.selectedMethod?.label).orDefault,
-                              ),
-                              GlobalText.caption(
-                                value:
-                                    'PT. ${(state.selectedMethod?.label).orDefault}',
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.all(context.spacingMd),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(context.spacingMd),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withAlpha(25),
-                        blurRadius: 5,
-                        offset: const Offset(0, 5),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    spacing: context.spacingSm,
-                    children: [
-                      const GlobalText.title(value: 'Rincian Pembayaran'),
-                      const Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Expanded(
-                              child:
-                                  GlobalText.caption(value: 'Total Supplier')),
-                          GlobalText.label(value: '3'),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Expanded(
-                            child:
-                                GlobalText.caption(value: 'Metode Pembayaran'),
-                          ),
-                          GlobalText.label(value: state.selectedMethod!.label),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Expanded(
-                              child: GlobalText.caption(
-                                  value: 'Tanggal Pembayaran')),
-                          GlobalText.label(
-                            value: DateFormat.yMEd().format(DateTime.now()),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          const Expanded(
-                            child: GlobalText.label(value: 'Total Pembayaran'),
-                          ),
-                          GlobalText.title(
-                            value: state.amount.orDefault,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
+                receiptContent(context, state),
                 IntrinsicHeight(
                   child: Container(
                     padding: EdgeInsets.all(context.spacingMd),
@@ -195,21 +234,24 @@ class PayoutReceiptPage extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Row(
-                            spacing: context.spacingSm,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Assets.icons.icDownload.svg(
-                                colorFilter: const ColorFilter.mode(
-                                  ColorName.primary,
-                                  BlendMode.srcIn,
+                          child: GestureDetector(
+                            onTap: () => _capturePng(),
+                            child: Row(
+                              spacing: context.spacingSm,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Assets.icons.icDownload.svg(
+                                  colorFilter: const ColorFilter.mode(
+                                    ColorName.primary,
+                                    BlendMode.srcIn,
+                                  ),
                                 ),
-                              ),
-                              const GlobalText.label(
-                                value: 'Unduh',
-                                color: ColorName.primary,
-                              ),
-                            ],
+                                const GlobalText.label(
+                                  value: 'Unduh',
+                                  color: ColorName.primary,
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                         const VerticalDivider(),
