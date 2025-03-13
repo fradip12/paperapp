@@ -1302,22 +1302,22 @@ abstract class _SetPaymentMethod implements PayoutEvent {
 /// @nodoc
 mixin _$PayoutState {
   ApiStatus get state => throw _privateConstructorUsedError;
-  List<AccountEts>? get accounts => throw _privateConstructorUsedError;
-  AccountEts? get selectedAccount => throw _privateConstructorUsedError;
-  BankEts? get selectedBank => throw _privateConstructorUsedError;
-  PaymentMethod? get selectedMethod => throw _privateConstructorUsedError;
   NotificationType get notificationType => throw _privateConstructorUsedError;
+  AccountEts? get selectedAccount => throw _privateConstructorUsedError;
+  PaymentMethod? get selectedMethod => throw _privateConstructorUsedError;
+  List<AccountEts>? get accounts => throw _privateConstructorUsedError;
+  BankEts? get selectedBank => throw _privateConstructorUsedError;
   String? get errMessage => throw _privateConstructorUsedError;
   String? get amount => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)
         initial,
@@ -1327,11 +1327,11 @@ mixin _$PayoutState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)?
         initial,
@@ -1341,11 +1341,11 @@ mixin _$PayoutState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)?
         initial,
@@ -1384,11 +1384,11 @@ abstract class $PayoutStateCopyWith<$Res> {
   @useResult
   $Res call(
       {ApiStatus state,
-      List<AccountEts>? accounts,
-      AccountEts? selectedAccount,
-      BankEts? selectedBank,
-      PaymentMethod? selectedMethod,
       NotificationType notificationType,
+      AccountEts? selectedAccount,
+      PaymentMethod? selectedMethod,
+      List<AccountEts>? accounts,
+      BankEts? selectedBank,
       String? errMessage,
       String? amount});
 
@@ -1412,11 +1412,11 @@ class _$PayoutStateCopyWithImpl<$Res, $Val extends PayoutState>
   @override
   $Res call({
     Object? state = null,
-    Object? accounts = freezed,
-    Object? selectedAccount = freezed,
-    Object? selectedBank = freezed,
-    Object? selectedMethod = freezed,
     Object? notificationType = null,
+    Object? selectedAccount = freezed,
+    Object? selectedMethod = freezed,
+    Object? accounts = freezed,
+    Object? selectedBank = freezed,
     Object? errMessage = freezed,
     Object? amount = freezed,
   }) {
@@ -1425,26 +1425,26 @@ class _$PayoutStateCopyWithImpl<$Res, $Val extends PayoutState>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      accounts: freezed == accounts
-          ? _value.accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<AccountEts>?,
-      selectedAccount: freezed == selectedAccount
-          ? _value.selectedAccount
-          : selectedAccount // ignore: cast_nullable_to_non_nullable
-              as AccountEts?,
-      selectedBank: freezed == selectedBank
-          ? _value.selectedBank
-          : selectedBank // ignore: cast_nullable_to_non_nullable
-              as BankEts?,
-      selectedMethod: freezed == selectedMethod
-          ? _value.selectedMethod
-          : selectedMethod // ignore: cast_nullable_to_non_nullable
-              as PaymentMethod?,
       notificationType: null == notificationType
           ? _value.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      selectedAccount: freezed == selectedAccount
+          ? _value.selectedAccount
+          : selectedAccount // ignore: cast_nullable_to_non_nullable
+              as AccountEts?,
+      selectedMethod: freezed == selectedMethod
+          ? _value.selectedMethod
+          : selectedMethod // ignore: cast_nullable_to_non_nullable
+              as PaymentMethod?,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as List<AccountEts>?,
+      selectedBank: freezed == selectedBank
+          ? _value.selectedBank
+          : selectedBank // ignore: cast_nullable_to_non_nullable
+              as BankEts?,
       errMessage: freezed == errMessage
           ? _value.errMessage
           : errMessage // ignore: cast_nullable_to_non_nullable
@@ -1495,11 +1495,11 @@ abstract class _$$InitialImplCopyWith<$Res>
   @useResult
   $Res call(
       {ApiStatus state,
-      List<AccountEts>? accounts,
-      AccountEts? selectedAccount,
-      BankEts? selectedBank,
-      PaymentMethod? selectedMethod,
       NotificationType notificationType,
+      AccountEts? selectedAccount,
+      PaymentMethod? selectedMethod,
+      List<AccountEts>? accounts,
+      BankEts? selectedBank,
       String? errMessage,
       String? amount});
 
@@ -1523,11 +1523,11 @@ class __$$InitialImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? state = null,
-    Object? accounts = freezed,
-    Object? selectedAccount = freezed,
-    Object? selectedBank = freezed,
-    Object? selectedMethod = freezed,
     Object? notificationType = null,
+    Object? selectedAccount = freezed,
+    Object? selectedMethod = freezed,
+    Object? accounts = freezed,
+    Object? selectedBank = freezed,
     Object? errMessage = freezed,
     Object? amount = freezed,
   }) {
@@ -1536,26 +1536,26 @@ class __$$InitialImplCopyWithImpl<$Res>
           ? _value.state
           : state // ignore: cast_nullable_to_non_nullable
               as ApiStatus,
-      accounts: freezed == accounts
-          ? _value._accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<AccountEts>?,
-      selectedAccount: freezed == selectedAccount
-          ? _value.selectedAccount
-          : selectedAccount // ignore: cast_nullable_to_non_nullable
-              as AccountEts?,
-      selectedBank: freezed == selectedBank
-          ? _value.selectedBank
-          : selectedBank // ignore: cast_nullable_to_non_nullable
-              as BankEts?,
-      selectedMethod: freezed == selectedMethod
-          ? _value.selectedMethod
-          : selectedMethod // ignore: cast_nullable_to_non_nullable
-              as PaymentMethod?,
       notificationType: null == notificationType
           ? _value.notificationType
           : notificationType // ignore: cast_nullable_to_non_nullable
               as NotificationType,
+      selectedAccount: freezed == selectedAccount
+          ? _value.selectedAccount
+          : selectedAccount // ignore: cast_nullable_to_non_nullable
+              as AccountEts?,
+      selectedMethod: freezed == selectedMethod
+          ? _value.selectedMethod
+          : selectedMethod // ignore: cast_nullable_to_non_nullable
+              as PaymentMethod?,
+      accounts: freezed == accounts
+          ? _value._accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as List<AccountEts>?,
+      selectedBank: freezed == selectedBank
+          ? _value.selectedBank
+          : selectedBank // ignore: cast_nullable_to_non_nullable
+              as BankEts?,
       errMessage: freezed == errMessage
           ? _value.errMessage
           : errMessage // ignore: cast_nullable_to_non_nullable
@@ -1573,11 +1573,11 @@ class __$$InitialImplCopyWithImpl<$Res>
 class _$InitialImpl implements _Initial {
   const _$InitialImpl(
       {this.state = ApiStatus.initial,
-      final List<AccountEts>? accounts,
-      this.selectedAccount,
-      this.selectedBank,
-      this.selectedMethod,
       this.notificationType = NotificationType.whatsapp,
+      this.selectedAccount,
+      this.selectedMethod,
+      final List<AccountEts>? accounts,
+      this.selectedBank,
       this.errMessage,
       this.amount})
       : _accounts = accounts;
@@ -1585,6 +1585,13 @@ class _$InitialImpl implements _Initial {
   @override
   @JsonKey()
   final ApiStatus state;
+  @override
+  @JsonKey()
+  final NotificationType notificationType;
+  @override
+  final AccountEts? selectedAccount;
+  @override
+  final PaymentMethod? selectedMethod;
   final List<AccountEts>? _accounts;
   @override
   List<AccountEts>? get accounts {
@@ -1596,14 +1603,7 @@ class _$InitialImpl implements _Initial {
   }
 
   @override
-  final AccountEts? selectedAccount;
-  @override
   final BankEts? selectedBank;
-  @override
-  final PaymentMethod? selectedMethod;
-  @override
-  @JsonKey()
-  final NotificationType notificationType;
   @override
   final String? errMessage;
   @override
@@ -1611,7 +1611,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'PayoutState.initial(state: $state, accounts: $accounts, selectedAccount: $selectedAccount, selectedBank: $selectedBank, selectedMethod: $selectedMethod, notificationType: $notificationType, errMessage: $errMessage, amount: $amount)';
+    return 'PayoutState.initial(state: $state, notificationType: $notificationType, selectedAccount: $selectedAccount, selectedMethod: $selectedMethod, accounts: $accounts, selectedBank: $selectedBank, errMessage: $errMessage, amount: $amount)';
   }
 
   @override
@@ -1620,15 +1620,15 @@ class _$InitialImpl implements _Initial {
         (other.runtimeType == runtimeType &&
             other is _$InitialImpl &&
             (identical(other.state, state) || other.state == state) &&
-            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
-            (identical(other.selectedAccount, selectedAccount) ||
-                other.selectedAccount == selectedAccount) &&
-            (identical(other.selectedBank, selectedBank) ||
-                other.selectedBank == selectedBank) &&
-            (identical(other.selectedMethod, selectedMethod) ||
-                other.selectedMethod == selectedMethod) &&
             (identical(other.notificationType, notificationType) ||
                 other.notificationType == notificationType) &&
+            (identical(other.selectedAccount, selectedAccount) ||
+                other.selectedAccount == selectedAccount) &&
+            (identical(other.selectedMethod, selectedMethod) ||
+                other.selectedMethod == selectedMethod) &&
+            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
+            (identical(other.selectedBank, selectedBank) ||
+                other.selectedBank == selectedBank) &&
             (identical(other.errMessage, errMessage) ||
                 other.errMessage == errMessage) &&
             (identical(other.amount, amount) || other.amount == amount));
@@ -1638,11 +1638,11 @@ class _$InitialImpl implements _Initial {
   int get hashCode => Object.hash(
       runtimeType,
       state,
-      const DeepCollectionEquality().hash(_accounts),
-      selectedAccount,
-      selectedBank,
-      selectedMethod,
       notificationType,
+      selectedAccount,
+      selectedMethod,
+      const DeepCollectionEquality().hash(_accounts),
+      selectedBank,
       errMessage,
       amount);
 
@@ -1659,17 +1659,17 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)
         initial,
   }) {
-    return initial(state, accounts, selectedAccount, selectedBank,
-        selectedMethod, notificationType, errMessage, amount);
+    return initial(state, notificationType, selectedAccount, selectedMethod,
+        accounts, selectedBank, errMessage, amount);
   }
 
   @override
@@ -1677,17 +1677,17 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)?
         initial,
   }) {
-    return initial?.call(state, accounts, selectedAccount, selectedBank,
-        selectedMethod, notificationType, errMessage, amount);
+    return initial?.call(state, notificationType, selectedAccount,
+        selectedMethod, accounts, selectedBank, errMessage, amount);
   }
 
   @override
@@ -1695,19 +1695,19 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
             ApiStatus state,
-            List<AccountEts>? accounts,
-            AccountEts? selectedAccount,
-            BankEts? selectedBank,
-            PaymentMethod? selectedMethod,
             NotificationType notificationType,
+            AccountEts? selectedAccount,
+            PaymentMethod? selectedMethod,
+            List<AccountEts>? accounts,
+            BankEts? selectedBank,
             String? errMessage,
             String? amount)?
         initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(state, accounts, selectedAccount, selectedBank,
-          selectedMethod, notificationType, errMessage, amount);
+      return initial(state, notificationType, selectedAccount, selectedMethod,
+          accounts, selectedBank, errMessage, amount);
     }
     return orElse();
   }
@@ -1744,26 +1744,26 @@ class _$InitialImpl implements _Initial {
 abstract class _Initial implements PayoutState {
   const factory _Initial(
       {final ApiStatus state,
-      final List<AccountEts>? accounts,
-      final AccountEts? selectedAccount,
-      final BankEts? selectedBank,
-      final PaymentMethod? selectedMethod,
       final NotificationType notificationType,
+      final AccountEts? selectedAccount,
+      final PaymentMethod? selectedMethod,
+      final List<AccountEts>? accounts,
+      final BankEts? selectedBank,
       final String? errMessage,
       final String? amount}) = _$InitialImpl;
 
   @override
   ApiStatus get state;
   @override
-  List<AccountEts>? get accounts;
+  NotificationType get notificationType;
   @override
   AccountEts? get selectedAccount;
   @override
-  BankEts? get selectedBank;
-  @override
   PaymentMethod? get selectedMethod;
   @override
-  NotificationType get notificationType;
+  List<AccountEts>? get accounts;
+  @override
+  BankEts? get selectedBank;
   @override
   String? get errMessage;
   @override

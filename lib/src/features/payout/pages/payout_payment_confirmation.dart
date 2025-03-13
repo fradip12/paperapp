@@ -7,6 +7,7 @@ import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_button.dart';
 import '../../../shared/extension/ext_dimens.dart';
+import '../../../shared/extension/ext_misc.dart';
 import '../managers/payout_bloc.dart';
 import '../widgets/view_payment_recipient_bank.dart';
 import '../widgets/view_payout_recipient.dart';
@@ -60,6 +61,8 @@ class PayoutPaymentConfirmationPage extends StatelessWidget {
                     onTap: () =>
                         context.navigateTo(const PayoutPaymentMethodRoute()),
                     fullWidth: false,
+                    enable: (state.amount?.isNotEmpty).orDefault &&
+                        state.selectedBank != null,
                     backgroundColor: ColorName.green,
                     child: const GlobalText.label(
                       value: 'Selanjutnya',

@@ -7,3 +7,7 @@ extension StringExt on String? {
     return initials.length > 2 ? initials.substring(0, 2) : initials;
   }
 }
+
+extension BoolExt on bool? {
+  bool get orDefault => this ?? false;
+}

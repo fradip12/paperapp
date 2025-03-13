@@ -63,6 +63,7 @@ class _PayoutPaymentMethodPageState extends State<PayoutPaymentMethodPage> {
                     onTap: () =>
                         context.navigateTo(const PayoutPaymentSendRoute()),
                     fullWidth: false,
+                    enable: state.selectedMethod != null,
                     backgroundColor: ColorName.primary,
                     child: const GlobalText.label(
                       value: 'Lanjutkan',

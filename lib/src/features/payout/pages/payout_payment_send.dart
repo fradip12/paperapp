@@ -6,6 +6,7 @@ import '../../../core/app_router.gr.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_button.dart';
+import '../../../shared/components/interactive/global_copy.dart';
 import '../../../shared/extension/ext_dimens.dart';
 import '../../../shared/extension/ext_misc.dart';
 import '../managers/payout_bloc.dart';
@@ -49,7 +50,10 @@ class PayoutPaymentSendPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     spacing: context.spacingXs,
                     children: [
-                      const GlobalText.title(value: 'Lakukan Pembayaran ke'),
+                      const GlobalText.label(
+                        value: 'Lakukan Pembayaran ke',
+                        fontWeight: FontWeight.bold,
+                      ),
                       Row(
                         spacing: context.spacingSm,
                         children: [
@@ -80,11 +84,12 @@ class PayoutPaymentSendPage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GlobalText.title(
-                                value: (state.selectedBank?.accountNumber)
-                                    .orDefault),
-                            const GlobalText.label(
-                              value: 'SALIN',
-                              color: ColorName.primary,
+                              value:
+                                  (state.selectedBank?.accountNumber).orDefault,
+                            ),
+                            GlobalCopy(
+                              value:
+                                  (state.selectedBank?.accountNumber).orDefault,
                             ),
                           ],
                         ),
@@ -99,16 +104,15 @@ class PayoutPaymentSendPage extends StatelessWidget {
                           borderRadius:
                               BorderRadius.circular(context.spacingXxs),
                         ),
-                        child: const Row(
+                        child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             GlobalText.title(
-                              value: 'Rp. 1.000',
+                              value: state.amount.orDefault,
                             ),
-                            GlobalText.label(
-                              value: 'SALIN',
-                              color: ColorName.primary,
-                            ),
+                            GlobalCopy(
+                              value: state.amount.orDefault,
+                            )
                           ],
                         ),
                       ),
@@ -128,29 +132,31 @@ class PayoutPaymentSendPage extends StatelessWidget {
                       ),
                     ],
                   ),
-                  child: const Column(
+                  child: Column(
                     children: [
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GlobalText.caption(value: 'Total Nominal'),
-                          GlobalText.label(value: 'Rp. 1.000'),
+                          const GlobalText.caption(value: 'Total Nominal'),
+                          GlobalText.label(value: state.amount.orDefault),
                         ],
                       ),
-                      Row(
+                      const Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           GlobalText.caption(value: 'Biaya Tambahan'),
-                          GlobalText.label(value: 'Rp. 1.000'),
+                          GlobalText.label(
+                            value: 'GRATIS',
+                          ),
                         ],
                       ),
-                      Divider(),
+                      const Divider(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          GlobalText.caption(value: 'Jumlah Tagihan'),
+                          const GlobalText.caption(value: 'Jumlah Tagihan'),
                           GlobalText.title(
-                            value: 'Rp. 1.000',
+                            value: state.amount.orDefault,
                             fontWeight: FontWeight.bold,
                           ),
                         ],
