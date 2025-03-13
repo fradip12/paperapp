@@ -1,10 +1,10 @@
-# Paper Out Project Test Documentation
+# Paper.id - Paper Out Project Test Documentation
 
 ## Overview
 
 ![Product Update Banner](assets/product_paperout.jpg)
 
-This Flutter application follows clean architecture principles and implements modern Flutter development practices. The project uses BLoC for state management and follows a feature-first organization structure.
+This Flutter application follows clean architecture principles and implements modern Flutter development practices.
 
 ## Slicing UI
 
