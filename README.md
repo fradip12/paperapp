@@ -2,7 +2,7 @@
 
 ## Overview
 
-![Product Update Banner](product_paperout.jpg)
+![Product Update Banner](assets/product_paperout.jpg)
 
 This Flutter application follows clean architecture principles and implements modern Flutter development practices. The project uses BLoC for state management and follows a feature-first organization structure.
 
