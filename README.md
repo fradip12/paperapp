@@ -212,53 +212,66 @@ class DioClient {
 abstract class ApiClient {
   factory ApiClient(Dio dio) = _ApiClient;
   
-  @GET('/endpoint')
-  Future<Response> getData();
-}
-```
-
-### Asset Management
-
-Assets are managed using flutter_gen:
-
-```dart
-// Generated asset references
-Assets.images.logo.path
-Assets.icons.payment
-Colors.primary
-```
-
-Configure in pubspec.yaml:
-
-```yaml
-flutter_gen:
-  output: lib/src/core/gen/
-  colors:
-    inputs:
-      - assets/color/colors.xml
-```
-
-### Error Handling
-
-The application implements comprehensive error handling:
-
-```dart
-// Example error handling in repository
-@Injectable()
-class PayoutRepositoryImpl implements PayoutRepository {
-  final PayoutRemoteDataSource _dataSource;
+  @GET('/api/v1/savedAccounts')
+  Future<List<SavedAccount>> getSavedAccounts();
   
-  Future<Either<Failure, Success>> execute() async {
-    try {
-      final result = await _dataSource.getData();
-      return Right(result);
-    } on DioError catch (e) {
-      return Left(NetworkFailure(e.message));
-    } catch (e) {
-      return Left(UnexpectedFailure());
-    }
-  }
+  @GET('/api/v1/bankList')
+  Future<List<Bank>> getBankList();
 }
+```
+
+### Mock API Endpoints
+
+The application uses mock APIs for development and testing:
+
+Base URL: `https://67d17d02825945773eb4845d.mockapi.io`
+
+#### 1. Saved Accounts
+
+- **Endpoint**: `/api/v1/savedAccounts`
+- **Method**: GET
+- **Response**: List of saved accounts with details
+- **Sample Response**:
+
+```json
+[
+  {
+    "nama": "Agus Supriyadi",
+    "phone": "08123456789",
+    "email": "agus.supriyadi@gmail.com",
+    "id": "1"
+  },
+  {
+    "nama": "Tama Nugraha",
+    "phone": "085974964088",
+    "email": "tama.nugraha@yahoo.com",
+    "id": "2"
+  }
+  // ... more accounts
+]
+```
+
+#### 2. Bank List
+
+- **Endpoint**: `/api/v1/bankList`
+- **Method**: GET
+- **Response**: List of available banks with their codes
+- **Sample Response**:
+
+```json
+[
+  {
+    "id": "bank001",
+    "nama": "Allo Bank Indonesia",
+    "kode": "567"
+  },
+  {
+    "id": "bank002",
+    "nama": "Bangkok Bank",
+    "kode": "022"
+  }
+  // ... more banks
+]
 ```
 
 ## Available Make Commands
