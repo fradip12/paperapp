@@ -18,6 +18,7 @@ class GlobalText extends StatelessWidget {
     this.color = ColorName.textPrimary,
     this.fontWeight = FontWeight.bold,
   }) : type = GlobalTextType.title;
+
   const GlobalText.label({
     super.key,
     required this.value,
@@ -25,6 +26,7 @@ class GlobalText extends StatelessWidget {
     this.color = ColorName.textPrimary,
     this.fontWeight = FontWeight.normal,
   }) : type = GlobalTextType.label;
+
   const GlobalText.caption({
     super.key,
     required this.value,

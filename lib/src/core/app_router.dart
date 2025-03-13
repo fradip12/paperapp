@@ -38,5 +38,9 @@ class PaperAppRouter extends RootStackRouter {
           path: '/payment-send',
           page: PayoutPaymentSendRoute.page,
         ),
+        AutoRoute(
+          path: '/receipt',
+          page: PayoutReceiptRoute.page,
+        ),
       ];
 }

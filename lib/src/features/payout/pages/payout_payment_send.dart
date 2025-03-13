@@ -2,8 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/app_router.gr.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
+import '../../../shared/components/interactive/global_button.dart';
 import '../../../shared/extension/ext_dimens.dart';
 import '../../../shared/extension/ext_misc.dart';
 import '../managers/payout_bloc.dart';
@@ -156,6 +158,15 @@ class PayoutPaymentSendPage extends StatelessWidget {
                     ],
                   ),
                 ),
+                const Spacer(),
+                GlobalButton.filled(
+                  onTap: () => context.navigateTo(const PayoutReceiptRoute()),
+                  child: const GlobalText.label(
+                    value: 'Saya Sudah Bayar',
+                    color: Colors.white,
+                  ),
+                ),
+                context.spacingMd.vSpace,
               ],
             );
           },
