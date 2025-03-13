@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+
 import 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Page,Route')
@@ -32,6 +33,10 @@ class PaperAppRouter extends RootStackRouter {
         AutoRoute(
           path: '/payment-method',
           page: PayoutPaymentMethodRoute.page,
+        ),
+        AutoRoute(
+          path: '/payment-send',
+          page: PayoutPaymentSendRoute.page,
         ),
       ];
 }
