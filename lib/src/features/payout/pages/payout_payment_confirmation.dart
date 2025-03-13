@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../core/app_router.gr.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_button.dart';
@@ -56,7 +57,8 @@ class PayoutPaymentConfirmationPage extends StatelessWidget {
                 Flexible(
                   flex: 4,
                   child: GlobalButton.filled(
-                    onTap: () {},
+                    onTap: () =>
+                        context.navigateTo(const PayoutPaymentMethodRoute()),
                     fullWidth: false,
                     backgroundColor: ColorName.green,
                     child: const GlobalText.label(

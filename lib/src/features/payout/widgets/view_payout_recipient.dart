@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/enums/notification_type.dart';
-import '../../../data/models/account.dart';
+import '../../../domain/entity/ets_account.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_textfield.dart';
@@ -12,7 +12,7 @@ import '../managers/payout_bloc.dart';
 import 'card_payout_account.dart';
 
 class PaymentRecipientCardView extends StatefulWidget {
-  final Accounts account;
+  final AccountEts account;
   const PaymentRecipientCardView({super.key, required this.account});
 
   @override

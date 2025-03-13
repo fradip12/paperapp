@@ -4,8 +4,10 @@ part of 'payout_bloc.dart';
 class PayoutState with _$PayoutState {
   const factory PayoutState.initial({
     @Default(ApiStatus.initial) ApiStatus state,
-    List<Accounts>? accounts,
-    Accounts? selectedAccount,
+    List<AccountEts>? accounts,
+    AccountEts? selectedAccount,
+    BankEts? selectedBank,
+    PaymentMethod? selectedMethod,
     @Default(NotificationType.whatsapp) NotificationType notificationType,
     String? errMessage,
     String? amount,

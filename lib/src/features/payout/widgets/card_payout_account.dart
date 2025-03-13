@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/app_router.gr.dart';
-import '../../../data/models/account.dart';
+import '../../../domain/entity/ets_account.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/extension/ext_dimens.dart';
@@ -11,7 +11,7 @@ import '../../../shared/extension/ext_misc.dart';
 import '../managers/payout_bloc.dart';
 
 class PayoutAccountCard extends StatelessWidget {
-  final Accounts account;
+  final AccountEts account;
   final bool useBorder;
   const PayoutAccountCard({
     super.key,

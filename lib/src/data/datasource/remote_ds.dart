@@ -3,6 +3,8 @@ import 'package:injectable/injectable.dart';
 import '../models/account.dart';
 import 'package:retrofit/retrofit.dart';
 
+import '../models/bank.dart';
+
 part 'remote_ds.g.dart';
 
 @lazySingleton
@@ -16,4 +18,7 @@ abstract class PayoutRemoteDatasources {
 
   @GET('savedAccounts')
   Future<List<Accounts>> savedAccounts();
+
+  @GET('bankList')
+  Future<List<Bank>> banksList();
 }

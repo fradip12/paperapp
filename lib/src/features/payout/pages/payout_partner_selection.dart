@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../core/app_di.dart';
 import '../../../shared/assets/colors.gen.dart';
 import '../../../shared/components/display/global_text.dart';
 import '../../../shared/components/interactive/global_textfield.dart';
@@ -36,14 +35,6 @@ class _PayoutPartnerSelectionPageState
           color: Colors.white,
         ),
         centerTitle: true,
-        automaticallyImplyLeading: true,
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
-          ),
-        ),
       ),
       body: Padding(
         padding: EdgeInsets.all(context.spacingMd),
@@ -56,10 +47,10 @@ class _PayoutPartnerSelectionPageState
               prefixIcon: const Icon(Icons.search),
               onChanged: (value) {
                 if (value?.isEmpty ?? false) {
-                  locator<PayoutBloc>().add(const PayoutEvent.load());
+                  context.read<PayoutBloc>().add(const PayoutEvent.load());
                   return;
                 }
-                locator<PayoutBloc>().add(PayoutEvent.search(value!));
+                context.read<PayoutBloc>().add(PayoutEvent.search(value!));
               },
             ),
             const GlobalText.caption(value: 'Kirim Pembayaran Kepada : '),

@@ -21,5 +21,17 @@ class PaperAppRouter extends RootStackRouter {
           path: '/payment-confirmation',
           page: PayoutPaymentConfirmationRoute.page,
         ),
+        AutoRoute(
+          path: '/add-bank',
+          page: PayoutAddBankRoute.page,
+        ),
+        AutoRoute(
+          path: '/view-banks-list',
+          page: ViewBanksListRoute.page,
+        ),
+        AutoRoute(
+          path: '/payment-method',
+          page: PayoutPaymentMethodRoute.page,
+        ),
       ];
 }

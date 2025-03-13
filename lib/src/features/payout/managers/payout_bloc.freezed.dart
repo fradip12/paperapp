@@ -15,438 +15,39 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$PayoutState {
-  ApiStatus get state => throw _privateConstructorUsedError;
-  List<Accounts>? get accounts => throw _privateConstructorUsedError;
-  Accounts? get selectedAccount => throw _privateConstructorUsedError;
-  NotificationType get notificationType => throw _privateConstructorUsedError;
-  String? get errMessage => throw _privateConstructorUsedError;
-  String? get amount => throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)?
-        initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)?
-        initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) =>
-      throw _privateConstructorUsedError;
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) =>
-      throw _privateConstructorUsedError;
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $PayoutStateCopyWith<PayoutState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $PayoutStateCopyWith<$Res> {
-  factory $PayoutStateCopyWith(
-          PayoutState value, $Res Function(PayoutState) then) =
-      _$PayoutStateCopyWithImpl<$Res, PayoutState>;
-  @useResult
-  $Res call(
-      {ApiStatus state,
-      List<Accounts>? accounts,
-      Accounts? selectedAccount,
-      NotificationType notificationType,
-      String? errMessage,
-      String? amount});
-
-  $AccountsCopyWith<$Res>? get selectedAccount;
-}
-
-/// @nodoc
-class _$PayoutStateCopyWithImpl<$Res, $Val extends PayoutState>
-    implements $PayoutStateCopyWith<$Res> {
-  _$PayoutStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? state = null,
-    Object? accounts = freezed,
-    Object? selectedAccount = freezed,
-    Object? notificationType = null,
-    Object? errMessage = freezed,
-    Object? amount = freezed,
-  }) {
-    return _then(_value.copyWith(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ApiStatus,
-      accounts: freezed == accounts
-          ? _value.accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<Accounts>?,
-      selectedAccount: freezed == selectedAccount
-          ? _value.selectedAccount
-          : selectedAccount // ignore: cast_nullable_to_non_nullable
-              as Accounts?,
-      notificationType: null == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      errMessage: freezed == errMessage
-          ? _value.errMessage
-          : errMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @pragma('vm:prefer-inline')
-  $AccountsCopyWith<$Res>? get selectedAccount {
-    if (_value.selectedAccount == null) {
-      return null;
-    }
-
-    return $AccountsCopyWith<$Res>(_value.selectedAccount!, (value) {
-      return _then(_value.copyWith(selectedAccount: value) as $Val);
-    });
-  }
-}
-
-/// @nodoc
-abstract class _$$InitialImplCopyWith<$Res>
-    implements $PayoutStateCopyWith<$Res> {
-  factory _$$InitialImplCopyWith(
-          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
-      __$$InitialImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call(
-      {ApiStatus state,
-      List<Accounts>? accounts,
-      Accounts? selectedAccount,
-      NotificationType notificationType,
-      String? errMessage,
-      String? amount});
-
-  @override
-  $AccountsCopyWith<$Res>? get selectedAccount;
-}
-
-/// @nodoc
-class __$$InitialImplCopyWithImpl<$Res>
-    extends _$PayoutStateCopyWithImpl<$Res, _$InitialImpl>
-    implements _$$InitialImplCopyWith<$Res> {
-  __$$InitialImplCopyWithImpl(
-      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? state = null,
-    Object? accounts = freezed,
-    Object? selectedAccount = freezed,
-    Object? notificationType = null,
-    Object? errMessage = freezed,
-    Object? amount = freezed,
-  }) {
-    return _then(_$InitialImpl(
-      state: null == state
-          ? _value.state
-          : state // ignore: cast_nullable_to_non_nullable
-              as ApiStatus,
-      accounts: freezed == accounts
-          ? _value._accounts
-          : accounts // ignore: cast_nullable_to_non_nullable
-              as List<Accounts>?,
-      selectedAccount: freezed == selectedAccount
-          ? _value.selectedAccount
-          : selectedAccount // ignore: cast_nullable_to_non_nullable
-              as Accounts?,
-      notificationType: null == notificationType
-          ? _value.notificationType
-          : notificationType // ignore: cast_nullable_to_non_nullable
-              as NotificationType,
-      errMessage: freezed == errMessage
-          ? _value.errMessage
-          : errMessage // ignore: cast_nullable_to_non_nullable
-              as String?,
-      amount: freezed == amount
-          ? _value.amount
-          : amount // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$InitialImpl implements _Initial {
-  const _$InitialImpl(
-      {this.state = ApiStatus.initial,
-      final List<Accounts>? accounts,
-      this.selectedAccount,
-      this.notificationType = NotificationType.whatsapp,
-      this.errMessage,
-      this.amount})
-      : _accounts = accounts;
-
-  @override
-  @JsonKey()
-  final ApiStatus state;
-  final List<Accounts>? _accounts;
-  @override
-  List<Accounts>? get accounts {
-    final value = _accounts;
-    if (value == null) return null;
-    if (_accounts is EqualUnmodifiableListView) return _accounts;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
-  }
-
-  @override
-  final Accounts? selectedAccount;
-  @override
-  @JsonKey()
-  final NotificationType notificationType;
-  @override
-  final String? errMessage;
-  @override
-  final String? amount;
-
-  @override
-  String toString() {
-    return 'PayoutState.initial(state: $state, accounts: $accounts, selectedAccount: $selectedAccount, notificationType: $notificationType, errMessage: $errMessage, amount: $amount)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$InitialImpl &&
-            (identical(other.state, state) || other.state == state) &&
-            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
-            (identical(other.selectedAccount, selectedAccount) ||
-                other.selectedAccount == selectedAccount) &&
-            (identical(other.notificationType, notificationType) ||
-                other.notificationType == notificationType) &&
-            (identical(other.errMessage, errMessage) ||
-                other.errMessage == errMessage) &&
-            (identical(other.amount, amount) || other.amount == amount));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      state,
-      const DeepCollectionEquality().hash(_accounts),
-      selectedAccount,
-      notificationType,
-      errMessage,
-      amount);
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)
-        initial,
-  }) {
-    return initial(
-        state, accounts, selectedAccount, notificationType, errMessage, amount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)?
-        initial,
-  }) {
-    return initial?.call(
-        state, accounts, selectedAccount, notificationType, errMessage, amount);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(
-            ApiStatus state,
-            List<Accounts>? accounts,
-            Accounts? selectedAccount,
-            NotificationType notificationType,
-            String? errMessage,
-            String? amount)?
-        initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(state, accounts, selectedAccount, notificationType,
-          errMessage, amount);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-  }) {
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-  }) {
-    return initial?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    required TResult orElse(),
-  }) {
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements PayoutState {
-  const factory _Initial(
-      {final ApiStatus state,
-      final List<Accounts>? accounts,
-      final Accounts? selectedAccount,
-      final NotificationType notificationType,
-      final String? errMessage,
-      final String? amount}) = _$InitialImpl;
-
-  @override
-  ApiStatus get state;
-  @override
-  List<Accounts>? get accounts;
-  @override
-  Accounts? get selectedAccount;
-  @override
-  NotificationType get notificationType;
-  @override
-  String? get errMessage;
-  @override
-  String? get amount;
-
-  /// Create a copy of PayoutState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$PayoutEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -455,8 +56,10 @@ mixin _$PayoutEvent {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -464,8 +67,10 @@ mixin _$PayoutEvent {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -473,8 +78,10 @@ mixin _$PayoutEvent {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -543,10 +150,12 @@ class _$LoadImpl implements _Load {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) {
     return load();
   }
@@ -556,9 +165,11 @@ class _$LoadImpl implements _Load {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) {
     return load?.call();
   }
@@ -568,9 +179,11 @@ class _$LoadImpl implements _Load {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -585,8 +198,10 @@ class _$LoadImpl implements _Load {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) {
     return load(this);
   }
@@ -597,8 +212,10 @@ class _$LoadImpl implements _Load {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) {
     return load?.call(this);
   }
@@ -609,8 +226,10 @@ class _$LoadImpl implements _Load {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (load != null) {
@@ -694,10 +313,12 @@ class _$SearchImpl implements _Search {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) {
     return search(query);
   }
@@ -707,9 +328,11 @@ class _$SearchImpl implements _Search {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) {
     return search?.call(query);
   }
@@ -719,9 +342,11 @@ class _$SearchImpl implements _Search {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -736,8 +361,10 @@ class _$SearchImpl implements _Search {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) {
     return search(this);
   }
@@ -748,8 +375,10 @@ class _$SearchImpl implements _Search {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) {
     return search?.call(this);
   }
@@ -760,8 +389,10 @@ class _$SearchImpl implements _Search {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (search != null) {
@@ -789,9 +420,9 @@ abstract class _$$SelectAccountImplCopyWith<$Res> {
           _$SelectAccountImpl value, $Res Function(_$SelectAccountImpl) then) =
       __$$SelectAccountImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Accounts account});
+  $Res call({AccountEts account});
 
-  $AccountsCopyWith<$Res> get account;
+  $AccountEtsCopyWith<$Res> get account;
 }
 
 /// @nodoc
@@ -813,7 +444,7 @@ class __$$SelectAccountImplCopyWithImpl<$Res>
       null == account
           ? _value.account
           : account // ignore: cast_nullable_to_non_nullable
-              as Accounts,
+              as AccountEts,
     ));
   }
 
@@ -821,8 +452,8 @@ class __$$SelectAccountImplCopyWithImpl<$Res>
   /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  $AccountsCopyWith<$Res> get account {
-    return $AccountsCopyWith<$Res>(_value.account, (value) {
+  $AccountEtsCopyWith<$Res> get account {
+    return $AccountEtsCopyWith<$Res>(_value.account, (value) {
       return _then(_value.copyWith(account: value));
     });
   }
@@ -834,7 +465,7 @@ class _$SelectAccountImpl implements _SelectAccount {
   const _$SelectAccountImpl(this.account);
 
   @override
-  final Accounts account;
+  final AccountEts account;
 
   @override
   String toString() {
@@ -865,10 +496,12 @@ class _$SelectAccountImpl implements _SelectAccount {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) {
     return selectAccount(account);
   }
@@ -878,9 +511,11 @@ class _$SelectAccountImpl implements _SelectAccount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) {
     return selectAccount?.call(account);
   }
@@ -890,9 +525,11 @@ class _$SelectAccountImpl implements _SelectAccount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (selectAccount != null) {
@@ -907,8 +544,10 @@ class _$SelectAccountImpl implements _SelectAccount {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) {
     return selectAccount(this);
   }
@@ -919,8 +558,10 @@ class _$SelectAccountImpl implements _SelectAccount {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) {
     return selectAccount?.call(this);
   }
@@ -931,8 +572,10 @@ class _$SelectAccountImpl implements _SelectAccount {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (selectAccount != null) {
@@ -943,14 +586,197 @@ class _$SelectAccountImpl implements _SelectAccount {
 }
 
 abstract class _SelectAccount implements PayoutEvent {
-  const factory _SelectAccount(final Accounts account) = _$SelectAccountImpl;
+  const factory _SelectAccount(final AccountEts account) = _$SelectAccountImpl;
 
-  Accounts get account;
+  AccountEts get account;
 
   /// Create a copy of PayoutEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SelectAccountImplCopyWith<_$SelectAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SelectBankImplCopyWith<$Res> {
+  factory _$$SelectBankImplCopyWith(
+          _$SelectBankImpl value, $Res Function(_$SelectBankImpl) then) =
+      __$$SelectBankImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BankEts bank});
+
+  $BankEtsCopyWith<$Res> get bank;
+}
+
+/// @nodoc
+class __$$SelectBankImplCopyWithImpl<$Res>
+    extends _$PayoutEventCopyWithImpl<$Res, _$SelectBankImpl>
+    implements _$$SelectBankImplCopyWith<$Res> {
+  __$$SelectBankImplCopyWithImpl(
+      _$SelectBankImpl _value, $Res Function(_$SelectBankImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? bank = null,
+  }) {
+    return _then(_$SelectBankImpl(
+      null == bank
+          ? _value.bank
+          : bank // ignore: cast_nullable_to_non_nullable
+              as BankEts,
+    ));
+  }
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BankEtsCopyWith<$Res> get bank {
+    return $BankEtsCopyWith<$Res>(_value.bank, (value) {
+      return _then(_value.copyWith(bank: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$SelectBankImpl implements _SelectBank {
+  const _$SelectBankImpl(this.bank);
+
+  @override
+  final BankEts bank;
+
+  @override
+  String toString() {
+    return 'PayoutEvent.selectBank(bank: $bank)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SelectBankImpl &&
+            (identical(other.bank, bank) || other.bank == bank));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, bank);
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SelectBankImplCopyWith<_$SelectBankImpl> get copyWith =>
+      __$$SelectBankImplCopyWithImpl<_$SelectBankImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String query) search,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
+    required TResult Function(String amount) setAmount,
+    required TResult Function(NotificationType notificationType)
+        setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
+  }) {
+    return selectBank(bank);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(String query)? search,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
+    TResult? Function(String amount)? setAmount,
+    TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
+  }) {
+    return selectBank?.call(bank);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String query)? search,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
+    TResult Function(String amount)? setAmount,
+    TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (selectBank != null) {
+      return selectBank(bank);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_Search value) search,
+    required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
+    required TResult Function(_SetAmount value) setAmount,
+    required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
+  }) {
+    return selectBank(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Load value)? load,
+    TResult? Function(_Search value)? search,
+    TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
+    TResult? Function(_SetAmount value)? setAmount,
+    TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
+  }) {
+    return selectBank?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_Search value)? search,
+    TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
+    TResult Function(_SetAmount value)? setAmount,
+    TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (selectBank != null) {
+      return selectBank(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SelectBank implements PayoutEvent {
+  const factory _SelectBank(final BankEts bank) = _$SelectBankImpl;
+
+  BankEts get bank;
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SelectBankImplCopyWith<_$SelectBankImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -1024,10 +850,12 @@ class _$SetAmountImpl implements _SetAmount {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) {
     return setAmount(amount);
   }
@@ -1037,9 +865,11 @@ class _$SetAmountImpl implements _SetAmount {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) {
     return setAmount?.call(amount);
   }
@@ -1049,9 +879,11 @@ class _$SetAmountImpl implements _SetAmount {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (setAmount != null) {
@@ -1066,8 +898,10 @@ class _$SetAmountImpl implements _SetAmount {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) {
     return setAmount(this);
   }
@@ -1078,8 +912,10 @@ class _$SetAmountImpl implements _SetAmount {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) {
     return setAmount?.call(this);
   }
@@ -1090,8 +926,10 @@ class _$SetAmountImpl implements _SetAmount {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (setAmount != null) {
@@ -1185,10 +1023,12 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
   TResult when<TResult extends Object?>({
     required TResult Function() load,
     required TResult Function(String query) search,
-    required TResult Function(Accounts account) selectAccount,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
     required TResult Function(String amount) setAmount,
     required TResult Function(NotificationType notificationType)
         setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
   }) {
     return setNotificationType(notificationType);
   }
@@ -1198,9 +1038,11 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? load,
     TResult? Function(String query)? search,
-    TResult? Function(Accounts account)? selectAccount,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
     TResult? Function(String amount)? setAmount,
     TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
   }) {
     return setNotificationType?.call(notificationType);
   }
@@ -1210,9 +1052,11 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? load,
     TResult Function(String query)? search,
-    TResult Function(Accounts account)? selectAccount,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
     TResult Function(String amount)? setAmount,
     TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (setNotificationType != null) {
@@ -1227,8 +1071,10 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
     required TResult Function(_Load value) load,
     required TResult Function(_Search value) search,
     required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
     required TResult Function(_SetAmount value) setAmount,
     required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
   }) {
     return setNotificationType(this);
   }
@@ -1239,8 +1085,10 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
     TResult? Function(_Load value)? load,
     TResult? Function(_Search value)? search,
     TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
     TResult? Function(_SetAmount value)? setAmount,
     TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
   }) {
     return setNotificationType?.call(this);
   }
@@ -1251,8 +1099,10 @@ class _$SetNotificationTypeImpl implements _SetNotificationType {
     TResult Function(_Load value)? load,
     TResult Function(_Search value)? search,
     TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
     TResult Function(_SetAmount value)? setAmount,
     TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
     required TResult orElse(),
   }) {
     if (setNotificationType != null) {
@@ -1272,5 +1122,657 @@ abstract class _SetNotificationType implements PayoutEvent {
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$SetNotificationTypeImplCopyWith<_$SetNotificationTypeImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SetPaymentMethodImplCopyWith<$Res> {
+  factory _$$SetPaymentMethodImplCopyWith(_$SetPaymentMethodImpl value,
+          $Res Function(_$SetPaymentMethodImpl) then) =
+      __$$SetPaymentMethodImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({PaymentMethod paymentMethod});
+}
+
+/// @nodoc
+class __$$SetPaymentMethodImplCopyWithImpl<$Res>
+    extends _$PayoutEventCopyWithImpl<$Res, _$SetPaymentMethodImpl>
+    implements _$$SetPaymentMethodImplCopyWith<$Res> {
+  __$$SetPaymentMethodImplCopyWithImpl(_$SetPaymentMethodImpl _value,
+      $Res Function(_$SetPaymentMethodImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? paymentMethod = null,
+  }) {
+    return _then(_$SetPaymentMethodImpl(
+      null == paymentMethod
+          ? _value.paymentMethod
+          : paymentMethod // ignore: cast_nullable_to_non_nullable
+              as PaymentMethod,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SetPaymentMethodImpl implements _SetPaymentMethod {
+  const _$SetPaymentMethodImpl(this.paymentMethod);
+
+  @override
+  final PaymentMethod paymentMethod;
+
+  @override
+  String toString() {
+    return 'PayoutEvent.setPaymentMethod(paymentMethod: $paymentMethod)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SetPaymentMethodImpl &&
+            (identical(other.paymentMethod, paymentMethod) ||
+                other.paymentMethod == paymentMethod));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, paymentMethod);
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SetPaymentMethodImplCopyWith<_$SetPaymentMethodImpl> get copyWith =>
+      __$$SetPaymentMethodImplCopyWithImpl<_$SetPaymentMethodImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() load,
+    required TResult Function(String query) search,
+    required TResult Function(AccountEts account) selectAccount,
+    required TResult Function(BankEts bank) selectBank,
+    required TResult Function(String amount) setAmount,
+    required TResult Function(NotificationType notificationType)
+        setNotificationType,
+    required TResult Function(PaymentMethod paymentMethod) setPaymentMethod,
+  }) {
+    return setPaymentMethod(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? load,
+    TResult? Function(String query)? search,
+    TResult? Function(AccountEts account)? selectAccount,
+    TResult? Function(BankEts bank)? selectBank,
+    TResult? Function(String amount)? setAmount,
+    TResult? Function(NotificationType notificationType)? setNotificationType,
+    TResult? Function(PaymentMethod paymentMethod)? setPaymentMethod,
+  }) {
+    return setPaymentMethod?.call(paymentMethod);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? load,
+    TResult Function(String query)? search,
+    TResult Function(AccountEts account)? selectAccount,
+    TResult Function(BankEts bank)? selectBank,
+    TResult Function(String amount)? setAmount,
+    TResult Function(NotificationType notificationType)? setNotificationType,
+    TResult Function(PaymentMethod paymentMethod)? setPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (setPaymentMethod != null) {
+      return setPaymentMethod(paymentMethod);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Load value) load,
+    required TResult Function(_Search value) search,
+    required TResult Function(_SelectAccount value) selectAccount,
+    required TResult Function(_SelectBank value) selectBank,
+    required TResult Function(_SetAmount value) setAmount,
+    required TResult Function(_SetNotificationType value) setNotificationType,
+    required TResult Function(_SetPaymentMethod value) setPaymentMethod,
+  }) {
+    return setPaymentMethod(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Load value)? load,
+    TResult? Function(_Search value)? search,
+    TResult? Function(_SelectAccount value)? selectAccount,
+    TResult? Function(_SelectBank value)? selectBank,
+    TResult? Function(_SetAmount value)? setAmount,
+    TResult? Function(_SetNotificationType value)? setNotificationType,
+    TResult? Function(_SetPaymentMethod value)? setPaymentMethod,
+  }) {
+    return setPaymentMethod?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Load value)? load,
+    TResult Function(_Search value)? search,
+    TResult Function(_SelectAccount value)? selectAccount,
+    TResult Function(_SelectBank value)? selectBank,
+    TResult Function(_SetAmount value)? setAmount,
+    TResult Function(_SetNotificationType value)? setNotificationType,
+    TResult Function(_SetPaymentMethod value)? setPaymentMethod,
+    required TResult orElse(),
+  }) {
+    if (setPaymentMethod != null) {
+      return setPaymentMethod(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SetPaymentMethod implements PayoutEvent {
+  const factory _SetPaymentMethod(final PaymentMethod paymentMethod) =
+      _$SetPaymentMethodImpl;
+
+  PaymentMethod get paymentMethod;
+
+  /// Create a copy of PayoutEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$SetPaymentMethodImplCopyWith<_$SetPaymentMethodImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$PayoutState {
+  ApiStatus get state => throw _privateConstructorUsedError;
+  List<AccountEts>? get accounts => throw _privateConstructorUsedError;
+  AccountEts? get selectedAccount => throw _privateConstructorUsedError;
+  BankEts? get selectedBank => throw _privateConstructorUsedError;
+  PaymentMethod? get selectedMethod => throw _privateConstructorUsedError;
+  NotificationType get notificationType => throw _privateConstructorUsedError;
+  String? get errMessage => throw _privateConstructorUsedError;
+  String? get amount => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)
+        initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)?
+        initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)?
+        initial,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $PayoutStateCopyWith<PayoutState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PayoutStateCopyWith<$Res> {
+  factory $PayoutStateCopyWith(
+          PayoutState value, $Res Function(PayoutState) then) =
+      _$PayoutStateCopyWithImpl<$Res, PayoutState>;
+  @useResult
+  $Res call(
+      {ApiStatus state,
+      List<AccountEts>? accounts,
+      AccountEts? selectedAccount,
+      BankEts? selectedBank,
+      PaymentMethod? selectedMethod,
+      NotificationType notificationType,
+      String? errMessage,
+      String? amount});
+
+  $AccountEtsCopyWith<$Res>? get selectedAccount;
+  $BankEtsCopyWith<$Res>? get selectedBank;
+}
+
+/// @nodoc
+class _$PayoutStateCopyWithImpl<$Res, $Val extends PayoutState>
+    implements $PayoutStateCopyWith<$Res> {
+  _$PayoutStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? state = null,
+    Object? accounts = freezed,
+    Object? selectedAccount = freezed,
+    Object? selectedBank = freezed,
+    Object? selectedMethod = freezed,
+    Object? notificationType = null,
+    Object? errMessage = freezed,
+    Object? amount = freezed,
+  }) {
+    return _then(_value.copyWith(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
+      accounts: freezed == accounts
+          ? _value.accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as List<AccountEts>?,
+      selectedAccount: freezed == selectedAccount
+          ? _value.selectedAccount
+          : selectedAccount // ignore: cast_nullable_to_non_nullable
+              as AccountEts?,
+      selectedBank: freezed == selectedBank
+          ? _value.selectedBank
+          : selectedBank // ignore: cast_nullable_to_non_nullable
+              as BankEts?,
+      selectedMethod: freezed == selectedMethod
+          ? _value.selectedMethod
+          : selectedMethod // ignore: cast_nullable_to_non_nullable
+              as PaymentMethod?,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as NotificationType,
+      errMessage: freezed == errMessage
+          ? _value.errMessage
+          : errMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ) as $Val);
+  }
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $AccountEtsCopyWith<$Res>? get selectedAccount {
+    if (_value.selectedAccount == null) {
+      return null;
+    }
+
+    return $AccountEtsCopyWith<$Res>(_value.selectedAccount!, (value) {
+      return _then(_value.copyWith(selectedAccount: value) as $Val);
+    });
+  }
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $BankEtsCopyWith<$Res>? get selectedBank {
+    if (_value.selectedBank == null) {
+      return null;
+    }
+
+    return $BankEtsCopyWith<$Res>(_value.selectedBank!, (value) {
+      return _then(_value.copyWith(selectedBank: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$InitialImplCopyWith<$Res>
+    implements $PayoutStateCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call(
+      {ApiStatus state,
+      List<AccountEts>? accounts,
+      AccountEts? selectedAccount,
+      BankEts? selectedBank,
+      PaymentMethod? selectedMethod,
+      NotificationType notificationType,
+      String? errMessage,
+      String? amount});
+
+  @override
+  $AccountEtsCopyWith<$Res>? get selectedAccount;
+  @override
+  $BankEtsCopyWith<$Res>? get selectedBank;
+}
+
+/// @nodoc
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$PayoutStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? state = null,
+    Object? accounts = freezed,
+    Object? selectedAccount = freezed,
+    Object? selectedBank = freezed,
+    Object? selectedMethod = freezed,
+    Object? notificationType = null,
+    Object? errMessage = freezed,
+    Object? amount = freezed,
+  }) {
+    return _then(_$InitialImpl(
+      state: null == state
+          ? _value.state
+          : state // ignore: cast_nullable_to_non_nullable
+              as ApiStatus,
+      accounts: freezed == accounts
+          ? _value._accounts
+          : accounts // ignore: cast_nullable_to_non_nullable
+              as List<AccountEts>?,
+      selectedAccount: freezed == selectedAccount
+          ? _value.selectedAccount
+          : selectedAccount // ignore: cast_nullable_to_non_nullable
+              as AccountEts?,
+      selectedBank: freezed == selectedBank
+          ? _value.selectedBank
+          : selectedBank // ignore: cast_nullable_to_non_nullable
+              as BankEts?,
+      selectedMethod: freezed == selectedMethod
+          ? _value.selectedMethod
+          : selectedMethod // ignore: cast_nullable_to_non_nullable
+              as PaymentMethod?,
+      notificationType: null == notificationType
+          ? _value.notificationType
+          : notificationType // ignore: cast_nullable_to_non_nullable
+              as NotificationType,
+      errMessage: freezed == errMessage
+          ? _value.errMessage
+          : errMessage // ignore: cast_nullable_to_non_nullable
+              as String?,
+      amount: freezed == amount
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl(
+      {this.state = ApiStatus.initial,
+      final List<AccountEts>? accounts,
+      this.selectedAccount,
+      this.selectedBank,
+      this.selectedMethod,
+      this.notificationType = NotificationType.whatsapp,
+      this.errMessage,
+      this.amount})
+      : _accounts = accounts;
+
+  @override
+  @JsonKey()
+  final ApiStatus state;
+  final List<AccountEts>? _accounts;
+  @override
+  List<AccountEts>? get accounts {
+    final value = _accounts;
+    if (value == null) return null;
+    if (_accounts is EqualUnmodifiableListView) return _accounts;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  final AccountEts? selectedAccount;
+  @override
+  final BankEts? selectedBank;
+  @override
+  final PaymentMethod? selectedMethod;
+  @override
+  @JsonKey()
+  final NotificationType notificationType;
+  @override
+  final String? errMessage;
+  @override
+  final String? amount;
+
+  @override
+  String toString() {
+    return 'PayoutState.initial(state: $state, accounts: $accounts, selectedAccount: $selectedAccount, selectedBank: $selectedBank, selectedMethod: $selectedMethod, notificationType: $notificationType, errMessage: $errMessage, amount: $amount)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialImpl &&
+            (identical(other.state, state) || other.state == state) &&
+            const DeepCollectionEquality().equals(other._accounts, _accounts) &&
+            (identical(other.selectedAccount, selectedAccount) ||
+                other.selectedAccount == selectedAccount) &&
+            (identical(other.selectedBank, selectedBank) ||
+                other.selectedBank == selectedBank) &&
+            (identical(other.selectedMethod, selectedMethod) ||
+                other.selectedMethod == selectedMethod) &&
+            (identical(other.notificationType, notificationType) ||
+                other.notificationType == notificationType) &&
+            (identical(other.errMessage, errMessage) ||
+                other.errMessage == errMessage) &&
+            (identical(other.amount, amount) || other.amount == amount));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType,
+      state,
+      const DeepCollectionEquality().hash(_accounts),
+      selectedAccount,
+      selectedBank,
+      selectedMethod,
+      notificationType,
+      errMessage,
+      amount);
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
+      __$$InitialImplCopyWithImpl<_$InitialImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)
+        initial,
+  }) {
+    return initial(state, accounts, selectedAccount, selectedBank,
+        selectedMethod, notificationType, errMessage, amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)?
+        initial,
+  }) {
+    return initial?.call(state, accounts, selectedAccount, selectedBank,
+        selectedMethod, notificationType, errMessage, amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(
+            ApiStatus state,
+            List<AccountEts>? accounts,
+            AccountEts? selectedAccount,
+            BankEts? selectedBank,
+            PaymentMethod? selectedMethod,
+            NotificationType notificationType,
+            String? errMessage,
+            String? amount)?
+        initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(state, accounts, selectedAccount, selectedBank,
+          selectedMethod, notificationType, errMessage, amount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial value) initial,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial value)? initial,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initial implements PayoutState {
+  const factory _Initial(
+      {final ApiStatus state,
+      final List<AccountEts>? accounts,
+      final AccountEts? selectedAccount,
+      final BankEts? selectedBank,
+      final PaymentMethod? selectedMethod,
+      final NotificationType notificationType,
+      final String? errMessage,
+      final String? amount}) = _$InitialImpl;
+
+  @override
+  ApiStatus get state;
+  @override
+  List<AccountEts>? get accounts;
+  @override
+  AccountEts? get selectedAccount;
+  @override
+  BankEts? get selectedBank;
+  @override
+  PaymentMethod? get selectedMethod;
+  @override
+  NotificationType get notificationType;
+  @override
+  String? get errMessage;
+  @override
+  String? get amount;
+
+  /// Create a copy of PayoutState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$InitialImplCopyWith<_$InitialImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

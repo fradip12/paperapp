@@ -3,13 +3,15 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../data/enums/notification_type.dart';
-import '../../../data/models/account.dart';
+import '../../../domain/entity/ets_account.dart';
+import '../../../domain/entity/ets_bank.dart';
 import '../../../domain/repository/payout_repository.dart';
+import '../../../shared/models/enum_pay_method.dart';
 import '../../../shared/network/api_status.dart';
 
-part 'payout_state.dart';
-part 'payout_event.dart';
 part 'payout_bloc.freezed.dart';
+part 'payout_event.dart';
+part 'payout_state.dart';
 
 @injectable
 class PayoutBloc extends Bloc<PayoutEvent, PayoutState> {
@@ -30,7 +32,7 @@ class PayoutBloc extends Bloc<PayoutEvent, PayoutState> {
     });
 
     on<_Search>((event, emit) async {
-      List<Accounts> tempAccounts = List.from(state.accounts ?? []);
+      List<AccountEts> tempAccounts = List.from(state.accounts ?? []);
 
       if (state.state == ApiStatus.success) {
         final query = event.query.toLowerCase();
@@ -55,6 +57,14 @@ class PayoutBloc extends Bloc<PayoutEvent, PayoutState> {
 
     on<_SetNotificationType>((event, emit) {
       emit(state.copyWith(notificationType: event.notificationType));
+    });
+
+    on<_SelectBank>((event, emit) {
+      emit(state.copyWith(selectedBank: event.bank));
+    });
+
+    on<_SetPaymentMethod>((event, emit) {
+      emit(state.copyWith(selectedMethod: event.paymentMethod));
     });
   }
 }
